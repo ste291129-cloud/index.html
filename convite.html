@@ -11,9 +11,10 @@ body {
   font-family: Arial;
   text-align: center;
   color: #fff;
+  overflow:hidden;
 
-  /* FUNDO DESENHO FUNCIONAL */
-  background: linear-gradient(#6a0dad,#00a8a8);
+  /* FUNDO DO MAR */
+  background: linear-gradient(#4b0082, #006d6d);
 }
 
 /* TÍTULO */
@@ -22,33 +23,30 @@ h1 {
   color: #f3ccff;
 }
 
-/* CONTAINER */
-.container {
-  padding: 15px;
-}
-
-/* CARD BONITO SIMPLES (SEM BUG) */
+/* CARDS */
 .card {
   background: rgba(0,0,0,0.6);
   border-radius: 15px;
   padding: 15px;
   margin: 12px auto;
   max-width: 350px;
+  position: relative;
+  z-index: 2;
 }
 
 /* BOTÕES */
-a {
+a, button {
   display: inline-block;
   padding: 10px 15px;
   margin: 8px;
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
-  color: #fff;
+  border:none;
 }
 
-.whatsapp { background: #25D366; }
-.mapa { background: #7b5cff; }
+.whatsapp { background: #25D366; color:#fff; }
+.mapa { background: #7b5cff; color:#fff; }
 
 /* CONTADOR */
 #contador {
@@ -64,12 +62,33 @@ a {
   height: 8px;
   background: white;
   border-radius: 50%;
+  opacity: 0.7;
   animation: subir linear infinite;
 }
 
 @keyframes subir {
   0% { transform: translateY(0); }
   100% { transform: translateY(-120vh); }
+}
+
+/* SEREIAS */
+.sereia {
+  position: fixed;
+  width: 120px;
+  z-index: 1;
+}
+
+.m1 { animation: nadar1 18s linear infinite; }
+.m2 { animation: nadar2 22s linear infinite; top:60%; }
+
+@keyframes nadar1 {
+  0% { transform: translateX(-150px) translateY(200px); }
+  100% { transform: translateX(120vw) translateY(250px); }
+}
+
+@keyframes nadar2 {
+  0% { transform: translateX(-200px) translateY(50px); }
+  100% { transform: translateX(120vw) translateY(0); }
 }
 </style>
 </head>
@@ -78,9 +97,6 @@ a {
 
 <h1>🧜‍♀️ Aniversário da Helena 💖</h1>
 
-<div class="container">
-
-<!-- TEXTO -->
 <div class="card" style="text-align:left;">
 <p>Seja muito bem-vindo(a) ao cantinho especial da nossa pequena sereia Helena, que está prestes a completar 6 aninhos! 💜</p>
 
@@ -91,7 +107,6 @@ a {
 <p><b>Com carinho,<br>Família da sereia Helena 💕</b></p>
 </div>
 
-<!-- INFO -->
 <div class="card">
 <p><b>🎉 Helena faz 6 anos!</b></p>
 <p>📅 24/05/2026</p>
@@ -104,12 +119,10 @@ Ver localização
 </a>
 </div>
 
-<!-- CONTADOR -->
 <div class="card">
 <p id="contador">Carregando...</p>
 </div>
 
-<!-- WHATS -->
 <div class="card">
 <a href="https://wa.me/5516993813071?text=Confirmo%20presença%20na%20festa%20da%20Helena"
 target="_blank" class="whatsapp">
@@ -117,12 +130,33 @@ Confirmar presença
 </a>
 </div>
 
+<!-- MÚSICA -->
+<div class="card">
+<p>🎵 Clique para ouvir a música encantada</p>
+<button onclick="document.getElementById('musica').play()"
+style="background:linear-gradient(45deg,#7b5cff,#00e0b8);color:#fff;">
+Tocar música
+</button>
+
+<audio id="musica" loop>
+<source src="https://cdn.pixabay.com/download/audio/2023/03/28/audio_5f4c0a9c4c.mp3" type="audio/mpeg">
+</audio>
 </div>
 
-<!-- MÚSICA -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/GC_mV1IpjWA?autoplay=1&loop=1&playlist=GC_mV1IpjWA">
-</iframe>
+<!-- SEREIAS DESENHADAS -->
+<svg class="sereia m1" viewBox="0 0 200 100">
+<ellipse cx="40" cy="40" rx="15" ry="10" fill="#ff6a00"/>
+<circle cx="40" cy="35" r="6" fill="#ffd1a9"/>
+<path d="M40 40 Q55 55 70 50 Q85 45 100 60 Q85 70 60 65 Q45 60 40 50Z" fill="#7b5cff"/>
+<path d="M100 60 Q115 50 120 65 Q110 75 95 70Z" fill="#00e0b8"/>
+</svg>
+
+<svg class="sereia m2" viewBox="0 0 200 100">
+<ellipse cx="40" cy="40" rx="15" ry="10" fill="#ff6a00"/>
+<circle cx="40" cy="35" r="6" fill="#ffd1a9"/>
+<path d="M40 40 Q55 55 70 50 Q85 45 100 60 Q85 70 60 65 Q45 60 40 50Z" fill="#7b5cff"/>
+<path d="M100 60 Q115 50 120 65 Q110 75 95 70Z" fill="#00e0b8"/>
+</svg>
 
 <script>
 // CONTADOR
@@ -144,7 +178,7 @@ setInterval(()=>{
 },1000);
 
 // BOLHAS
-for(let i=0;i<20;i++){
+for(let i=0;i<25;i++){
   let b = document.createElement("div");
   b.className = "bolha";
   b.style.left = Math.random()*100+"%";
