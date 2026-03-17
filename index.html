@@ -3,52 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aniversário da Helena</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<title>Helena Faz 6 Anos</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
   color: #fff;
   overflow:hidden;
-
-  /* FUNDO DO MAR */
   background: linear-gradient(#4b0082, #006d6d);
 }
 
-/* TÍTULO */
 h1 {
+  font-family: 'Pacifico', cursive;
   margin-top: 20px;
   color: #f3ccff;
 }
 
-/* CARDS */
 .card {
   background: rgba(0,0,0,0.6);
-  border-radius: 15px;
-  padding: 15px;
+  border-radius: 20px;
+  padding: 18px;
   margin: 12px auto;
   max-width: 350px;
   position: relative;
   z-index: 2;
 }
 
-/* BOTÕES */
 a, button {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 12px 18px;
   margin: 8px;
-  border-radius: 20px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
   border:none;
 }
 
-.whatsapp { background: #25D366; color:#fff; }
-.mapa { background: #7b5cff; color:#fff; }
+.whatsapp { background:#25D366; color:#fff; }
+.mapa { background:#7b5cff; color:#fff; }
 
-/* CONTADOR */
 #contador {
   font-size: 18px;
   font-weight: bold;
@@ -62,7 +60,6 @@ a, button {
   height: 8px;
   background: white;
   border-radius: 50%;
-  opacity: 0.7;
   animation: subir linear infinite;
 }
 
@@ -71,24 +68,43 @@ a, button {
   100% { transform: translateY(-120vh); }
 }
 
-/* SEREIAS */
+/* SEREIA BONITA */
 .sereia {
   position: fixed;
-  width: 120px;
-  z-index: 1;
+  width: 180px;
+  z-index:1;
 }
 
-.m1 { animation: nadar1 18s linear infinite; }
-.m2 { animation: nadar2 22s linear infinite; top:60%; }
+.s1 { animation: nadar1 20s linear infinite; }
+.s2 { animation: nadar2 25s linear infinite; top:60%; }
 
 @keyframes nadar1 {
-  0% { transform: translateX(-150px) translateY(200px); }
+  0% { transform: translateX(-200px) translateY(200px); }
   100% { transform: translateX(120vw) translateY(250px); }
 }
 
 @keyframes nadar2 {
   0% { transform: translateX(-200px) translateY(50px); }
   100% { transform: translateX(120vw) translateY(0); }
+}
+
+/* PEIXES */
+.peixe {
+  position: fixed;
+  font-size: 24px;
+  animation: peixe 15s linear infinite;
+}
+
+@keyframes peixe {
+  0% { transform: translateX(-50px); }
+  100% { transform: translateX(120vw); }
+}
+
+/* ESTRELAS DO MAR */
+.estrela {
+  position: fixed;
+  bottom: 0;
+  font-size: 28px;
 }
 </style>
 </head>
@@ -114,17 +130,15 @@ a, button {
 <p>📍 Av. Independência, 294<br>Jardim Sumaré</p>
 <p>🎈 Top Festa Buffet</p>
 
-<a href="https://goo.gl/maps/Xk3bHkY7h6S2" target="_blank" class="mapa">
-Ver localização
-</a>
+<a href="https://goo.gl/maps/Xk3bHkY7h6S2" target="_blank" class="mapa">Ver localização</a>
 </div>
 
 <div class="card">
-<p id="contador">Carregando...</p>
+<p id="contador"></p>
 </div>
 
 <div class="card">
-<a href="https://wa.me/5516993813071?text=Confirmo%20presença%20na%20festa%20da%20Helena"
+<a href="https://wa.me/5516993813071?text=Oi,%20confirmo%20minha%20presença%20na%20festa%20da%20Helena!"
 target="_blank" class="whatsapp">
 Confirmar presença
 </a>
@@ -132,9 +146,8 @@ Confirmar presença
 
 <!-- MÚSICA -->
 <div class="card">
-<p>🎵 Clique para ouvir a música encantada</p>
-<button onclick="document.getElementById('musica').play()"
-style="background:linear-gradient(45deg,#7b5cff,#00e0b8);color:#fff;">
+<p>🎵 Toque para ouvir a música</p>
+<button onclick="document.getElementById('musica').play()" style="background:#7b5cff;color:#fff;">
 Tocar música
 </button>
 
@@ -143,20 +156,28 @@ Tocar música
 </audio>
 </div>
 
-<!-- SEREIAS DESENHADAS -->
-<svg class="sereia m1" viewBox="0 0 200 100">
-<ellipse cx="40" cy="40" rx="15" ry="10" fill="#ff6a00"/>
-<circle cx="40" cy="35" r="6" fill="#ffd1a9"/>
-<path d="M40 40 Q55 55 70 50 Q85 45 100 60 Q85 70 60 65 Q45 60 40 50Z" fill="#7b5cff"/>
-<path d="M100 60 Q115 50 120 65 Q110 75 95 70Z" fill="#00e0b8"/>
+<!-- SEREIA BONITA (SVG MELHORADO) -->
+<svg class="sereia s1" viewBox="0 0 200 200">
+<circle cx="60" cy="60" r="20" fill="#ffd1a9"/>
+<ellipse cx="60" cy="40" rx="30" ry="20" fill="#ff6a00"/>
+<path d="M60 80 Q80 120 120 110 Q150 100 170 130 Q140 160 90 150 Q60 140 60 110Z" fill="#7b5cff"/>
+<path d="M170 130 Q200 110 210 140 Q190 170 150 160Z" fill="#00e0b8"/>
 </svg>
 
-<svg class="sereia m2" viewBox="0 0 200 100">
-<ellipse cx="40" cy="40" rx="15" ry="10" fill="#ff6a00"/>
-<circle cx="40" cy="35" r="6" fill="#ffd1a9"/>
-<path d="M40 40 Q55 55 70 50 Q85 45 100 60 Q85 70 60 65 Q45 60 40 50Z" fill="#7b5cff"/>
-<path d="M100 60 Q115 50 120 65 Q110 75 95 70Z" fill="#00e0b8"/>
+<svg class="sereia s2" viewBox="0 0 200 200">
+<circle cx="60" cy="60" r="20" fill="#ffd1a9"/>
+<ellipse cx="60" cy="40" rx="30" ry="20" fill="#ff6a00"/>
+<path d="M60 80 Q80 120 120 110 Q150 100 170 130 Q140 160 90 150 Q60 140 60 110Z" fill="#7b5cff"/>
+<path d="M170 130 Q200 110 210 140 Q190 170 150 160Z" fill="#00e0b8"/>
 </svg>
+
+<!-- PEIXES -->
+<div class="peixe" style="top:30%;">🐟</div>
+<div class="peixe" style="top:50%; animation-duration:20s;">🐠</div>
+
+<!-- ESTRELAS -->
+<div class="estrela" style="left:20%;">⭐</div>
+<div class="estrela" style="left:70%;">⭐</div>
 
 <script>
 // CONTADOR
