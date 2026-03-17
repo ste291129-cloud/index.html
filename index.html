@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Fonte bonita estilo convite -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-<title>Helena Faz 6 Anos</title>
+<title>Aniversário da Helena</title>
 
 <style>
 body {
@@ -14,26 +15,30 @@ body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   color: #fff;
-  overflow:hidden;
+  overflow-x: hidden;
   background: linear-gradient(#4b0082, #006d6d);
 }
 
+/* Título */
 h1 {
   font-family: 'Pacifico', cursive;
   margin-top: 20px;
   color: #f3ccff;
+  font-size: 36px;
 }
 
+/* Cards */
 .card {
   background: rgba(0,0,0,0.6);
   border-radius: 20px;
-  padding: 18px;
-  margin: 12px auto;
-  max-width: 350px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 360px;
   position: relative;
   z-index: 2;
 }
 
+/* Botões */
 a, button {
   display: inline-block;
   padding: 12px 18px;
@@ -42,17 +47,20 @@ a, button {
   text-decoration: none;
   font-weight: bold;
   border:none;
+  font-size: 14px;
 }
 
 .whatsapp { background:#25D366; color:#fff; }
 .mapa { background:#7b5cff; color:#fff; }
 
+/* Contador */
 #contador {
   font-size: 18px;
   font-weight: bold;
+  margin-top:10px;
 }
 
-/* BOLHAS */
+/* Bolhas do mar */
 .bolha {
   position: fixed;
   bottom: -20px;
@@ -60,6 +68,7 @@ a, button {
   height: 8px;
   background: white;
   border-radius: 50%;
+  opacity:0.7;
   animation: subir linear infinite;
 }
 
@@ -68,7 +77,7 @@ a, button {
   100% { transform: translateY(-120vh); }
 }
 
-/* SEREIA BONITA */
+/* Sereias animadas */
 .sereia {
   position: fixed;
   width: 180px;
@@ -79,16 +88,16 @@ a, button {
 .s2 { animation: nadar2 25s linear infinite; top:60%; }
 
 @keyframes nadar1 {
-  0% { transform: translateX(-200px) translateY(200px); }
+  0% { transform: translateX(-250px) translateY(200px); }
   100% { transform: translateX(120vw) translateY(250px); }
 }
 
 @keyframes nadar2 {
-  0% { transform: translateX(-200px) translateY(50px); }
+  0% { transform: translateX(-250px) translateY(50px); }
   100% { transform: translateX(120vw) translateY(0); }
 }
 
-/* PEIXES */
+/* Peixes animados */
 .peixe {
   position: fixed;
   font-size: 24px;
@@ -100,7 +109,7 @@ a, button {
   100% { transform: translateX(120vw); }
 }
 
-/* ESTRELAS DO MAR */
+/* Estrelas do mar */
 .estrela {
   position: fixed;
   bottom: 0;
@@ -108,7 +117,6 @@ a, button {
 }
 </style>
 </head>
-
 <body>
 
 <h1>🧜‍♀️ Aniversário da Helena 💖</h1>
@@ -135,8 +143,7 @@ a, button {
 
 <div class="card">
 <p id="contador"></p>
-</div>
-
+</div><!-- Botão WhatsApp -->
 <div class="card">
 <a href="https://wa.me/5516993813071?text=Oi,%20confirmo%20minha%20presença%20na%20festa%20da%20Helena!"
 target="_blank" class="whatsapp">
@@ -144,43 +151,42 @@ Confirmar presença
 </a>
 </div>
 
-<!-- MÚSICA -->
+<!-- Música de fundo -->
 <div class="card">
 <p>🎵 Toque para ouvir a música</p>
 <button onclick="document.getElementById('musica').play()" style="background:#7b5cff;color:#fff;">
 Tocar música
 </button>
-
 <audio id="musica" loop>
-<source src="https://cdn.pixabay.com/download/audio/2023/03/28/audio_5f4c0a9c4c.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/28/audio_5f4c0a9c4c.mp3" type="audio/mpeg">
 </audio>
 </div>
 
-<!-- SEREIA BONITA (SVG MELHORADO) -->
+<!-- Sereias animadas (SVG simples, cabeças inclusas) -->
 <svg class="sereia s1" viewBox="0 0 200 200">
-<circle cx="60" cy="60" r="20" fill="#ffd1a9"/>
-<ellipse cx="60" cy="40" rx="30" ry="20" fill="#ff6a00"/>
-<path d="M60 80 Q80 120 120 110 Q150 100 170 130 Q140 160 90 150 Q60 140 60 110Z" fill="#7b5cff"/>
-<path d="M170 130 Q200 110 210 140 Q190 170 150 160Z" fill="#00e0b8"/>
+  <circle cx="60" cy="60" r="20" fill="#ffd1a9"/>
+  <ellipse cx="60" cy="40" rx="30" ry="20" fill="#ff6a00"/>
+  <path d="M60 80 Q80 120 120 110 Q150 100 170 130 Q140 160 90 150 Q60 140 60 110Z" fill="#7b5cff"/>
+  <path d="M170 130 Q200 110 210 140 Q190 170 150 160Z" fill="#00e0b8"/>
 </svg>
 
 <svg class="sereia s2" viewBox="0 0 200 200">
-<circle cx="60" cy="60" r="20" fill="#ffd1a9"/>
-<ellipse cx="60" cy="40" rx="30" ry="20" fill="#ff6a00"/>
-<path d="M60 80 Q80 120 120 110 Q150 100 170 130 Q140 160 90 150 Q60 140 60 110Z" fill="#7b5cff"/>
-<path d="M170 130 Q200 110 210 140 Q190 170 150 160Z" fill="#00e0b8"/>
+  <circle cx="60" cy="60" r="20" fill="#ffd1a9"/>
+  <ellipse cx="60" cy="40" rx="30" ry="20" fill="#ff6a00"/>
+  <path d="M60 80 Q80 120 120 110 Q150 100 170 130 Q140 160 90 150 Q60 140 60 110Z" fill="#7b5cff"/>
+  <path d="M170 130 Q200 110 210 140 Q190 170 150 160Z" fill="#00e0b8"/>
 </svg>
 
-<!-- PEIXES -->
+<!-- Peixes animados -->
 <div class="peixe" style="top:30%;">🐟</div>
 <div class="peixe" style="top:50%; animation-duration:20s;">🐠</div>
 
-<!-- ESTRELAS -->
+<!-- Estrelas do mar -->
 <div class="estrela" style="left:20%;">⭐</div>
 <div class="estrela" style="left:70%;">⭐</div>
 
 <script>
-// CONTADOR
+// Contador regressivo
 const data = new Date("May 24, 2026 14:00:00").getTime();
 const el = document.getElementById("contador");
 
@@ -198,7 +204,7 @@ setInterval(()=>{
     : "A festa começou! 🎉";
 },1000);
 
-// BOLHAS
+// Bolhas do mar
 for(let i=0;i<25;i++){
   let b = document.createElement("div");
   b.className = "bolha";
